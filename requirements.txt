@@ -1,0 +1,71 @@
+altair==5.5.0
+annotated-types @ file:///croot/annotated-types_1709542908624/work
+anyio==4.10.0
+attrs==25.3.0
+blinker==1.9.0
+cachetools==6.1.0
+certifi==2025.8.3
+charset-normalizer==3.4.2
+click==8.2.1
+distro==1.9.0
+dotenv==0.9.9
+exceptiongroup @ file:///croot/exceptiongroup_1706031385326/work
+fastapi @ file:///croot/fastapi_1724789151288/work
+gitdb==4.0.12
+GitPython==3.1.45
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+idna==3.10
+Jinja2==3.1.6
+jiter==0.10.0
+jsonpatch==1.33
+jsonpointer==3.0.0
+jsonschema==4.25.0
+jsonschema-specifications==2025.4.1
+langchain-core==0.3.72
+langchain-openai==0.3.28
+langsmith==0.4.13
+MarkupSafe==3.0.2
+narwhals==2.0.1
+numpy==2.2.6
+openai==1.99.1
+orjson==3.11.1
+packaging==25.0
+pandas==2.3.1
+pdf2image==1.17.0
+pillow==11.3.0
+protobuf==6.31.1
+pyarrow==21.0.0
+pydantic @ file:///croot/pydantic_1750768261732/work
+pydantic_core @ file:///croot/pydantic-core_1750754736071/work
+pydeck==0.9.1
+PyPDF2==3.0.1
+python-dateutil==2.9.0.post0
+python-dotenv==1.1.1
+python-multipart==0.0.20
+pytz==2025.2
+PyYAML==6.0.2
+referencing==0.36.2
+regex==2025.7.34
+requests==2.32.4
+requests-toolbelt==1.0.0
+rpds-py==0.26.0
+six==1.17.0
+smmap==5.0.2
+sniffio @ file:///croot/sniffio_1705431295498/work
+starlette @ file:///croot/starlette-recipe_1724683205298/work
+streamlit==1.48.0
+tenacity==9.1.2
+tiktoken==0.10.0
+toml==0.10.2
+tornado==6.5.1
+tqdm==4.67.1
+typing-inspection @ file:///croot/typing-inspection_1746023470701/work
+typing_extensions @ file:///croot/typing_extensions_1734714854207/work
+tzdata==2025.2
+urllib3==2.5.0
+utils==1.0.2
+uvicorn==0.35.0
+watchdog==6.0.0
+zstandard==0.23.0

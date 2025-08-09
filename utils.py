@@ -1,10 +1,10 @@
-prompt_hotel = """
+prompt_hotel="""
 You are a hotel bill expert. Extract and return structured JSON from this document.
 
 {
   "hotel_name": "",
   "gst_number": "",
-  "bill_number": "",
+  "bill_number": "", on the document it will be mentioned as Bill Number
   "check_in": {
     "date": "",
     "time": "" this is the arrival time which will be near arrival date
@@ -19,7 +19,6 @@ You are a hotel bill expert. Extract and return structured JSON from this docume
     "amount_with_gst": "", add the gst amount to the room tariff (hack would be take the base room tariff and add 12% of it to it)
     "sac_code": "", this will be mentioned in the document as SAC Code or HSN Code if there are multiple tarrif the codes will be same so you can take the first one
     "gst_percent": "", usually tariff will be mentioned in CGST and SGST format so you can add them up usually it is 12% divided into 6% CGST and 6% SGST
-    "tax_code": "", search if there is any tax code mentioned in the document
     "gst_amount": "", this will be 12% of the base room tariff
     "amount_without_gst": "" base room tariff without gst
   },
@@ -35,7 +34,6 @@ You are a hotel bill expert. Extract and return structured JSON from this docume
     "amount_with_gst": "", add the gst amount to the laundry charges (hack would be take the base laundry charges and add 18% of it to it), there could be multiple laundry charges so you can add them up
     "sac_code": "",this will be mentioned in the document as SAC Code or HSN Code if there are multiple tarrif the codes will be same so you can take the first one
     "gst_percent": "", usually gst will be mentioned in CGST and SGST format so you can add them up usually it is 18% divided into 9% CGST and 9% SGST
-    "tax_code": "", search if there is any tax code mentioned in the document
     "gst_amount": "", this will be 18% of the base laundry charges
     "amount_without_gst": "" base laundry charges without gst
   },
@@ -43,14 +41,109 @@ You are a hotel bill expert. Extract and return structured JSON from this docume
     "amount_with_gst": "", add the gst amount to the other charges (hack would be take the base other charges and add 18% of it to it), there could be multiple other charges so you can add them up
     "sac_code": "",this will be mentioned in the document as SAC Code or HSN Code if there are multiple tarrif the codes will be same so you can take the first one
     "gst_percent": "", 
-    "tax_code": "",
     "gst_amount": "",
     "amount_without_gst": ""
   },
   "claim_amount": ""
 }
-"""
 
+
+EXAMPLE_INPUT
+THE VERN AT BLVD
+P20, Trimbak Road, Nashik, Maharashtra-422007
+PH.:-02536640355, www.thevernblvd.com
+Email: reservations.nashik@aureashospitality.com
+TAX INVOICE
+Page 1 of 1
+Guest Name: Mr Bhavya Joshi
+Second Guest: Nil
+Guest Address: E-154 GCW township Ultra tech Cement Limited
+Gujrat
+Company Name: MAHINDRA AND MAHINDRA LIMITED
+Company Address: Gateway Building, Apollo Bunder Bhagat Singh Road, Fort, Mumbai MUMBAI
+Company GSTN #: 27AAACM3025B1ZZ
+Room No: 316
+Bill Number: 3048
+Bill Date: 18/06/24
+Reg No: 4369
+NoofPax/Meal: 1 / MAP
+Room Type: DELUXE QUEEN
+Arrival Date: 17/06/24 11:26
+Departure Date: 18/06/24 9:26
+Billing Instruction: DIRECT
+Nationality: India
+DateVoucher No.DescriptionSAC/HSN#DebitCreditBalance17/06/241371ROOM SERVICE9963320.00220.00220.0017/06/241371State GST @ 2.50%0.008.008.0017/06/241371Central GST @ 2.50%0.008.008.0017/06/241371ROOM SERVICE9963320.00120.00120.0017/06/241371State GST @ 2.50%0.003.003.0017/06/241371Central GST @ 2.50%0.003.003.0017/06/24Tariff9963110.003168.003168.0017/06/24State GST @ 6.00%0.00190.08190.0817/06/24Central GST @ 6.00%0.00190.08190.08
+Net Amount: 4010.16 0.00 4010.16
+In Words: Rupees Four Thousand Ten And Sixteen Paisa Only
+Settlement Details:
+Bill Summary :-
+TARIFF 3168.00
+Central GST @ 2.5 11.00
+Central GST @ 6.0 190.08
+ROOM SERVICE 440.00
+State GST @ 2.50% 11.00
+State GST @ 6.00% 190.08
+Total 4010.16
+Check Out Time 11 AM
+I Agree that my liability for the bills not waived and agree to be held personally liable in the event that the indicated person, company or association fails to pay for any part or the full amount of these charges.
+Billing Instruction: DIRECT
+Check should be drawn in favour of "BOULEVARD DIV OF AUTOMATIC H & RIL" payable At Par
+Please Deposit Your Room Key Card at Check Out. Check Out Time is 11:00 AM.
+Payment on Presentation of Bill Subject to Maharashtra Jurisdiction. Payment to Be Made In Favour of "BOULEVARD DIV OF AUTOMATIC H & RIL"
+Reception/ist DM Signature Guest Signature
+GSTIN#-27AACCA6667L1ZB An Aures Hospitality Group Venture
+PAN#-AACCA6667L Regd Office: Automatic Hotel & restaurant(I)Ltd. C-18 Dalia
+VAT#-27230061567 Estate Off New link Road Andheri(W) Mumbai-53 Tel:022-26731010
+SAC#-996311|Food SAC#-996332 Email:-feedback@aureashospitality.com CIN:U55100MH1999PLC121777
+
+
+
+EXAMPLE OUTPUT
+{
+  "hotel_name": "THE VERN",
+  "gst_number": "27AABCU1234R1ZX",
+  "bill_number": "3048",
+  "check_in": {
+    "date": "17-06-2024",
+    "time": "11:26"
+  },
+  "check_out": {
+    "date": "18-06-2024",
+    "time": "9:26"
+  },
+  "bill_date": "18-06-2024",
+  "location": "Mumbai",
+  "room_tariff": {
+    "amount_with_gst": 3168,
+    "sac_code": "996311",
+    "gst_percent": 12,
+    "gst_amount": 380.16,
+    "amount_without_gst": 2787.84
+  },
+  "food_charges": {
+    "amount_with_gst": 440,
+    "sac_code": "996332",
+    "gst_percent": 5,
+    "gst_amount": 22,
+    "amount_without_gst": 418
+  },
+  "laundry_charges": {
+    "amount_with_gst": 0,
+    "sac_code": "",
+    "gst_percent": 0,
+    "gst_amount": 0,
+    "amount_without_gst": 0
+  },
+  "other_charges": {
+    "amount_with_gst": 0,
+    "sac_code": "",
+    "gst_percent": 0,
+    "gst_amount": 0,
+    "amount_without_gst": 0
+  },
+  "claim_amount": 4010.16
+}
+"""
 
 
 
