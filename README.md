@@ -1,4 +1,4 @@
-# Travel Bot — README
+# Travel Bot
 
 > **Project:** Travel Assistant — MCP + LangGraph + Streamlit/Chainlit
 > **Location:** `~/MahindraMahindra/active/travel_bot`
@@ -10,6 +10,8 @@
 > This README documents architecture, code layout, setup, running, deep design decisions, prompt engineering, testing, debugging, and deployment notes. It also contains three images for reference (placeholders + descriptions) that you can add under `/docs` or `/images`.
 
 ---
+
+https://github.com/user-attachments/assets/7fbf9fe4-6f82-4595-a516-2d4a1ce1397d
 
 # Table of contents
 
