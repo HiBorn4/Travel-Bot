@@ -365,12 +365,8 @@ Create `/docs` or `/images` and add three images (PNG/SVG). Reference them in RE
 
    * Shows: Client (Chainlit/Streamlit) → FastAPI wrapper → MCP ClientSession → MCP Server (`main.py`) with tools; and separate LangGraph flow.
    * Caption: "High-level architecture showing the MCP pipeline and LangGraph alternative."
-
-
-
    
    ![Architecture diagram](public/archi.png)
-   *Figure 1 — MCP architecture and LangGraph alternative.*
    
 
 2. `docs/ui_preview.png` — **UI screenshot (Chainlit)**
@@ -382,7 +378,7 @@ Create `/docs` or `/images` and add three images (PNG/SVG). Reference them in RE
 
    
    ![UI preview](public/intro.png)
-   *Figure 3 — Chainlit chat UI screenshot.*
+   *Figure 2 — Chainlit chat UI screenshot.*
    
 
 > Tip: for each image, include a small alt text for accessibility, and keep them in `docs/` to avoid clutter.
