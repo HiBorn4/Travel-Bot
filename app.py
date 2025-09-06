@@ -1,47 +1,74 @@
-import streamlit as st
+# app.py
+import chainlit as cl
 import requests
 import json
 
-# Page config
-st.set_page_config(page_title="Reimbursement Extractor", layout="centered")
+API = "http://localhost:8000"
 
-# Title and description
-st.title("📄 Reimbursement Extractor (PDF/Image)")
-st.write("Upload a hotel, food, or travel bill (PDF/image) to classify and extract structured information.")
+def clean_response(answer: str) -> str:
+    """
+    Cleans backend responses:
+    - If valid JSON with "response", return that.
+    - If JSON has "travel_details" + "response", return just the response.
+    - If it's double-encoded JSON (string containing JSON), parse again.
+    - Otherwise, return raw text.
+    """
+    cleaned = answer
 
-# File uploader
-uploaded_file = st.file_uploader("Upload your file", type=["pdf", "png", "jpg", "jpeg"])
+    try:
+        parsed = json.loads(answer)
 
-# Store uploaded file in session for reuse
-if uploaded_file:
-    st.session_state["uploaded_file"] = uploaded_file
+        # Case 1: JSON dict with response
+        if isinstance(parsed, dict) and "response" in parsed:
+            cleaned = parsed["response"]
 
-# Resend and process button
-if "uploaded_file" in st.session_state:
-    if st.button("📤 Process / Resend File"):
-        with st.spinner("Processing your document..."):
-            uploaded_file = st.session_state["uploaded_file"]
-            files = {"file": (uploaded_file.name, uploaded_file, uploaded_file.type)}
-
+        # Case 2: Double-encoded JSON string
+        elif isinstance(parsed, str):
             try:
-                # Call the API
-                response = requests.post("http://localhost:8000/analyze_reimbursement", files=files)
-                # Ensure the response is successful before attempting to parse
-                response.raise_for_status() 
-                
-                # Directly display the JSON response as it is expected to be a valid object now
-                st.subheader("📑 API Response")
-                st.json(response.json())
+                parsed2 = json.loads(parsed)
+                if isinstance(parsed2, dict) and "response" in parsed2:
+                    cleaned = parsed2["response"]
+                else:
+                    cleaned = parsed
+            except Exception:
+                cleaned = parsed
+    except Exception:
+        cleaned = answer
 
-                # Optionally, if you still want to display specific fields
-                # result = response.json()
-                # st.success(f"✅ Reimbursement Type: {result.get('reimbursement_type', 'N/A')}")
-                # st.subheader("📑 Extracted Data")
-                # st.json(result.get("extracted_data", {}))
+    return cleaned.strip('"').strip()
 
-            except requests.exceptions.RequestException as e:
-                st.error(f"❌ API Error: {str(e)}")
-            except json.JSONDecodeError:
-                st.error("❌ Invalid JSON response from server. Check backend logs.")
-            except Exception as e:
-                st.error(f"❌ Unexpected error: {str(e)}")
+@cl.on_chat_start
+async def start_chat():
+    await cl.Message(
+        content="👋 Hello! I’m your Travel Assistant. Please provide your 8-digit Employee ID to get started.",
+        author="Assistant",
+        avatar="🤖"
+    ).send()
+
+@cl.on_message
+async def handle_message(message: cl.Message):
+    user_input = message.content
+
+    # Show user message with avatar
+    await cl.Message(content=user_input, author="You", avatar="👤").send()
+
+    try:
+        reply = requests.post(
+            f"{API}/chat",
+            data=user_input.encode(),
+            headers={"content-type": "text/plain"},
+            timeout=30,
+        )
+        answer = reply.text if reply.ok else f"⚠️ {reply.text}"
+    except Exception as e:
+        answer = f"⚠️ Error: {e}"
+
+    # --- Clean the response ---
+    cleaned_answer = clean_response(answer)
+
+    # Send assistant reply with avatar
+    await cl.Message(
+        content=cleaned_answer,
+        author="Assistant",
+        avatar="🤖"
+    ).send()
