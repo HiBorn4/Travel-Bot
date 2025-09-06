@@ -3,7 +3,7 @@ import chainlit as cl
 import requests
 import json
 
-API = "http://localhost:8000"
+API = "http://localhost:8001"
 
 def clean_response(answer: str) -> str:
     """
@@ -40,17 +40,17 @@ def clean_response(answer: str) -> str:
 @cl.on_chat_start
 async def start_chat():
     await cl.Message(
-        content="👋 Hello! I’m your Travel Assistant. Please provide your 8-digit Employee ID to get started.",
+        content="👋 Hello! I’m your Travel Assistant.",
         author="Assistant",
-        avatar="🤖"
+        # avatar="🤖"
     ).send()
 
 @cl.on_message
 async def handle_message(message: cl.Message):
     user_input = message.content
 
-    # Show user message with avatar
-    await cl.Message(content=user_input, author="You", avatar="👤").send()
+    # # Show user message with avatar
+    # await cl.Message(content=user_input, author="You").send()
 
     try:
         reply = requests.post(
@@ -70,5 +70,4 @@ async def handle_message(message: cl.Message):
     await cl.Message(
         content=cleaned_answer,
         author="Assistant",
-        avatar="🤖"
     ).send()
