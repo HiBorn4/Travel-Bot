@@ -57,7 +57,7 @@ async def handle_message(message: cl.Message):
             f"{API}/chat",
             data=user_input.encode(),
             headers={"content-type": "text/plain"},
-            timeout=30,
+            timeout=300,
         )
         answer = reply.text if reply.ok else f"⚠️ {reply.text}"
     except Exception as e:

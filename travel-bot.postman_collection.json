@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "11f87b89-eede-49f0-b971-ec0bd1df9f9c",
+		"name": "travel-bot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31026849"
+	},
+	"item": [
+		{
+			"name": "ES_HEADER",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "X",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_HEADER(UNAME='25017514',REINR='',MODE='',PERNR='25017514')?sap-client=500&async=true&$expand=NAV_MODE%2CNAV_CITYCLASS%2CNAV_CITYLIST%2CNAV_TICKMETHOD%2CNAV_PURPOSE%2CNAV_COSTASSIGN%2CNAV_KOSTL%2CNAV_CITY%2CNAV_TRAVELCLASS%2CNAV_EMPFLIGHTS%2CNAV_TRAVELDET",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_HEADER(UNAME='25017514',REINR='',MODE='',PERNR='25017514')"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "500"
+						},
+						{
+							"key": "async",
+							"value": "true"
+						},
+						{
+							"key": "$expand",
+							"value": "NAV_MODE%2CNAV_CITYCLASS%2CNAV_CITYLIST%2CNAV_TICKMETHOD%2CNAV_PURPOSE%2CNAV_COSTASSIGN%2CNAV_KOSTL%2CNAV_CITY%2CNAV_TRAVELCLASS%2CNAV_EMPFLIGHTS%2CNAV_TRAVELDET"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_MODE_ELIG_OR_NOT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "X",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_MODE_ELIG_OR_NOT(PERNR='25017514')",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_MODE_ELIG_OR_NOT(PERNR='25017514')"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_TRIPVALD",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_TRIPVALD(PERNR='25017514',DEPT_DATE='20250820',ARR_DATE='20250820',DEPT_TIME='070000',ARR_TIME='190000',ACTION='',TRIPNO='0000000000')?sap-client=500",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_TRIPVALD(PERNR='25017514',DEPT_DATE='20250820',ARR_DATE='20250820',DEPT_TIME='070000',ARR_TIME='190000',ACTION='',TRIPNO='0000000000')"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_GET",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "X",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ACTION\": \"\",\r\n    \"ADDADV\": \"0.00\",\r\n    \"DATE_BEG\": \"20250903\",\r\n    \"DATE_END\": \"20250903\",\r\n    \"FLAG\": \"\",\r\n    \"LOC_START\": \"Mumbai\",\r\n    \"LOCATION_END\": \"Pune\",\r\n    \"LOCSTART\": \"\",\r\n    \"MOBILE\": \"9759206343\",\r\n    \"NAV_APPROVERS\": [],\r\n    \"NAV_GETSEARCH\": [],\r\n    \"NAV_J12WAY\": [],\r\n    \"NAV_PREFERRED_FLIGHT\": [],\r\n    \"NAV_REPRICE\": [],\r\n    \"NAV_TRAVELDET\": [\r\n        {\r\n            \"PERNR\": \"25017514\",\r\n            \"DATE_BEG\": \"2025-09-03T00:00:00\",\r\n            \"TIME_BEG\": \"170000\",\r\n            \"DATE_END\": \"2025-09-03T00:00:00\",\r\n            \"TIME_END\": \"180000\",\r\n            \"LOCATION_BEG\": \"Mumbai\",\r\n            \"COUNTRY_BEG\": \"IN\",\r\n            \"ORIGIN_CODE\": \"BOM\",\r\n            \"LOCATION_END\": \"Pune\",\r\n            \"COUNTRY_END\": \"IN\",\r\n            \"DEST_CODE\": \"PNQ\",\r\n            \"TRAVEL_MODE\": \"B\",\r\n            \"TRAVEL_MODE_CODE\": \"B\",\r\n            \"TRAVEL_CLASS\": \"BAC\",\r\n            \"TRAVEL_CLASS_TEXT\": \"AC\",\r\n            \"PREFERRED_FLIGHT\": \"\",\r\n            \"MRC_1_2_WAY_FLAG\": \"\",\r\n            \"ITENARY\": \"1\",\r\n            \"TICKET_METHOD\": \"1\",\r\n            \"TICK_METH_TXT\": \"Self Booked\"\r\n        },\r\n        {\r\n            \"PERNR\": \"25017514\",\r\n            \"DATE_BEG\": \"2025-09-03T00:00:00\",\r\n            \"TIME_BEG\": \"180000\",\r\n            \"DATE_END\": \"2025-09-03T00:00:00\",\r\n            \"TIME_END\": \"000000\",\r\n            \"LOCATION_BEG\": \"Pune\",\r\n            \"COUNTRY_BEG\": \"IN\",\r\n            \"ORIGIN_CODE\": \"PNQ\",\r\n            \"LOCATION_END\": \"Mumbai\",\r\n            \"COUNTRY_END\": \"IN\",\r\n            \"DEST_CODE\": \"BOM\",\r\n            \"TRAVEL_MODE\": \"B\",\r\n            \"TRAVEL_MODE_CODE\": \"B\",\r\n            \"TRAVEL_CLASS\": \"BAC\",\r\n            \"TRAVEL_CLASS_TEXT\": \"AC\",\r\n            \"PREFERRED_FLIGHT\": \"\",\r\n            \"MRC_1_2_WAY_FLAG\": \"\",\r\n            \"ITENARY\": \"2\",\r\n            \"TICKET_METHOD\": \"1\",\r\n            \"TICK_METH_TXT\": \"Self Booked\"\r\n        }\r\n    ],\r\n    \"OLOC_START\": \"\",\r\n    \"OLOCATION_END\": \"\",\r\n    \"OTHERREASON\": \"\",\r\n    \"PAYMODE\": \"Bank Transfer To A/C -4248735076\",\r\n    \"PERNR\": \"25017514\",\r\n    \"PERSA\": \"CCRP\",\r\n    \"PERSK\": \"A3\",\r\n    \"REASON\": \"R&D Project\",\r\n    \"REINR\": \"0000000000\",\r\n    \"SEARCHMANDT\": \"X\",\r\n    \"SEARCHVISIBLE\": \"X\",\r\n    \"TIME_BEG\": \"17:00\",\r\n    \"TIME_END\": \"18:00\",\r\n    \"TRAVADV\": \"0.00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emssq.mahindra.com/domestictravel/ES_GET",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"domestictravel",
+						"ES_GET"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_FINAL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "X",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ACTION\": \"\",\r\n    \"ADDADV\": \"0.00\",\r\n    \"AGE\": \"27\",\r\n    \"ATTACHMANDT\": \"\",\r\n    \"ATTACHVISIBLE\": \"\",\r\n    \"COMMENT\": \"\",\r\n    \"CREAT_DATE\": \"\",\r\n    \"DATE_BEG\": \"20250809\",\r\n    \"DATE_END\": \"20250815\",\r\n    \"DOB\": \"19980901\",\r\n    \"EMAIL\": \"25017514@MAHINDRA.COM\",\r\n    \"FNAME\": \"Bhavya\",\r\n    \"ISSFUSERID\": \"\",\r\n    \"LNAME\": \"Joshi\",\r\n    \"LOC_START\": \"Mumbai\",\r\n    \"LOCATION_END\": \"Pune\",\r\n    \"MNAME\": \"\",\r\n    \"MOBILE\": \"9759206343\",\r\n    \"MODE\": \"\",\r\n    \"NAV_FIN_BOOK\": [],\r\n    \"NAV_FIN_COMING\": [],\r\n    \"NAV_FIN_COST\": [\r\n        {\r\n            \"AUFNR\": \"\",\r\n            \"KOSTL\": \"852800\",\r\n            \"PERCENT\": \"100.00\",\r\n            \"POSNR\": \"ADRG.25IT.DG.GE.A01\",\r\n            \"POSNR2W\": \"\"\r\n        }\r\n    ],\r\n    \"NAV_FIN_EMPFLIGHTS\": [],\r\n    \"NAV_FIN_FILES\": [],\r\n    \"NAV_FIN_GOING\": [],\r\n    \"NAV_FIN_J12WAY\": [],\r\n    \"NAV_FIN_ONEWAY\": [],\r\n    \"NAV_FIN_REPRICE\": [],\r\n    \"NAV_FIN_SEGMENT\": [],\r\n    \"NAV_FIN_TO_IT\": [\r\n        {\r\n            \"CITY_CLASS\": \"\",\r\n            \"COUNTRY_BEG\": \"IN\",\r\n            \"COUNTRY_END\": \"IN\",\r\n            \"DATE_BEG\": \"/Date(1754697600000)/\",\r\n            \"DATE_END\": \"/Date(1755216000000)/\",\r\n            \"DEL_BUTTON_READ_ONLY\": \"\",\r\n            \"DEST_CODE\": \"PNQ\",\r\n            \"EDIT_BUTTON_READ_ONLY\": \"\",\r\n            \"ITENARY\": \"1\",\r\n            \"LOCATION_BEG\": \"Mumbai\",\r\n            \"LOCATION_END\": \"Pune\",\r\n            \"MRC_1_2_WAY_FLAG\": \"\",\r\n            \"ORIGIN_CODE\": \"BOM\",\r\n            \"PERNR\": \"25017514\",\r\n            \"PREFERRED_FLIGHT\": \"\",\r\n            \"TIME_BEG\": \"210000\",\r\n            \"TIME_END\": \"220000\",\r\n            \"TRAVEL_CLASS\": \"*\",\r\n            \"TRAVEL_CLASS_TEXT\": \"Any Class\",\r\n            \"TRAVEL_MODE\": \"O\",\r\n            \"TRAVEL_MODE_CODE\": \"O\",\r\n            \"TICK_METH_TXT\": \"\",\r\n            \"TICKET_METHOD\": \"\"\r\n        },\r\n        {\r\n            \"CITY_CLASS\": \"\",\r\n            \"COUNTRY_BEG\": \"IN\",\r\n            \"COUNTRY_END\": \"IN\",\r\n            \"DATE_BEG\": \"/Date(1755216000000)/\",\r\n            \"DATE_END\": \"/Date(1755216000000)/\",\r\n            \"DEL_BUTTON_READ_ONLY\": \"\",\r\n            \"DEST_CODE\": \"BOM\",\r\n            \"EDIT_BUTTON_READ_ONLY\": \"\",\r\n            \"ITENARY\": \"2\",\r\n            \"LOCATION_BEG\": \"Pune\",\r\n            \"LOCATION_END\": \"Mumbai\",\r\n            \"MRC_1_2_WAY_FLAG\": \"\",\r\n            \"ORIGIN_CODE\": \"PNQ\",\r\n            \"PERNR\": \"25017514\",\r\n            \"PREFERRED_FLIGHT\": \"\",\r\n            \"TIME_BEG\": \"220000\",\r\n            \"TIME_END\": \"000000\",\r\n            \"TRAVEL_CLASS\": \"*\",\r\n            \"TRAVEL_CLASS_TEXT\": \"Any Class\",\r\n            \"TRAVEL_MODE\": \"O\",\r\n            \"TRAVEL_MODE_CODE\": \"O\",\r\n            \"TICK_METH_TXT\": \"\",\r\n            \"TICKET_METHOD\": \"\"\r\n        }\r\n    ],\r\n    \"NO_VALIDATIONS\": \"X\",\r\n    \"OLOC_START\": \"\",\r\n    \"OLOCATION_END\": \"\",\r\n    \"OTHERREASON\": \"\",\r\n    \"PAYMODE\": \"Bank Transfer To A/C -4248735076\",\r\n    \"PERNR\": \"25017514\",\r\n    \"PERSA\": \"CCRP\",\r\n    \"PERSK\": \"A3\",\r\n    \"REASON\": \"R&D Project\",\r\n    \"REINR\": \"0000000000\",\r\n    \"SEARCHMANDT\": \"X\",\r\n    \"SEARCHMODE\": \"\",\r\n    \"SEARCHVISIBLE\": \"X\",\r\n    \"SEX\": \"Male\",\r\n    \"TIME_BEG\": \"210000\",\r\n    \"TIME_END\": \"220000\",\r\n    \"TITLE\": \"Mr\",\r\n    \"TRAVADV\": \"0.00\",\r\n    \"TRIPDEL\": \"\",\r\n    \"TRIPEDIT\": \"\",\r\n    \"WAERS\": \"\",\r\n    \"WBSMAND\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://emssq.mahindra.com/domestictravel/ES_FINAL",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"domestictravel",
+						"ES_FINAL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_TRIP_GET_LIST_OF_EMPSet",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_TRIP_GET_LIST_OF_EMPSet(USER_ID='25017514',EMP_ID='',FILTER_STATUS='',TRIP_NUMBER='',STARTDATE='20250101',ENDDATE='20250901')/NAV_Get_Emp_Trips_List?sap-client=500",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_TRIP_GET_LIST_OF_EMPSet(USER_ID='25017514',EMP_ID='',FILTER_STATUS='',TRIP_NUMBER='',STARTDATE='20250101',ENDDATE='20250901')",
+						"NAV_Get_Emp_Trips_List"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_TRIP_GETEXPNS_LIST_OF_EMPSet",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_TRIP_GETEXPNS_LIST_OF_EMPSet(USER_ID='25017514',EMP_ID='',TRIP_NUMBER='',STARTDATE='20250525',ENDDATE='20251125')/NAV_Get_Emp_TripExpenses_List?sap-client=500",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_TRIP_GETEXPNS_LIST_OF_EMPSet(USER_ID='25017514',EMP_ID='',TRIP_NUMBER='',STARTDATE='20250525',ENDDATE='20251125')",
+						"NAV_Get_Emp_TripExpenses_List"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_TRIP_CANCEL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Bhavyajoshi@2025",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25017514",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://emssq.mahindra.com/sap/opu/odata/sap/ZHR_DOMESTIC_TRAVEL_SRV/ES_TRIP_CANCEL(PERNR='25017514',TRIPNO='2200120405',COMMENTS='testing')?sap-client=500",
+					"protocol": "https",
+					"host": [
+						"emssq",
+						"mahindra",
+						"com"
+					],
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZHR_DOMESTIC_TRAVEL_SRV",
+						"ES_TRIP_CANCEL(PERNR='25017514',TRIPNO='2200120405',COMMENTS='testing')"
+					],
+					"query": [
+						{
+							"key": "sap-client",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES_FINAL_APPROVAL",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

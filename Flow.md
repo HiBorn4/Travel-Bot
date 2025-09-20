@@ -7,15 +7,10 @@ What is your employee ID?
 print("1ST API CALL ")
 
 
-
-
-
-
-
 📡 Getting employee details...
 What is the purpose of your trip? Where are you traveling from and to? What are your travel start and end dates and times?
 
-R&D Project, Mumbai to Pune, 15th sept 2025 9am to 20th septh 2025 10pm
+R&D Project, Mumbai to Pune, 15th october 2025 9am to 20th october 2025 10pm
 Round trip Train Sleeper Self Booked
 
 
@@ -37,7 +32,7 @@ What is your preferred travel class for the bus (AC or Non-AC)? How will the boo
 AC and company-booked
 Please provide the cost center (6-digit integer) and project WBS (alphanumeric code).
 
-607402 and ADRG.25IT.DG.GE.A01
+Cost center is 607402 and Project wbs is ADRG.25IT.DG.GE.A01
 📦 Travel request JSON generated.
 { "travel_purpose": "R&D Project", "origin_city": "Mumbai", "destination_city": "Pune", "start_date": "20250915", "end_date": "20250920", "start_time": "09:00", "end_time": "22:00", "journey_type": "Round Trip", "travel_mode": "Bus", "travel_class_text": "AC", "booking_method": "Company Booked", "cost_center": "607402", "project_wbs": "ADRG.25IT.DG.GE.A01", "comment": "", "travel_advance": "0.00", "additional_advance": "0.00", "reimburse_percentage": "100.00" }
 🚀 Submitting travel request...
