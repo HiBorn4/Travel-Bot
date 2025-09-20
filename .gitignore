@@ -54,3 +54,4 @@ main_code/
 .conda*/
 .python-version
 *.env
+travel-bot.postman_collection.json
